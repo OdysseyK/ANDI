@@ -24,6 +24,9 @@ def text_complition(msg, info):
         temperature=0.6,
         messages=history
         )
+
+        logger.debug(f"Result: {response.choices[0].message.content}")
+
         return {
             'status': 1,
             'response': response.choices[0].message.content

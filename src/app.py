@@ -1,5 +1,5 @@
-from helper.openai_api import text_complition, entity_rec
-from helper.twilio_api import send_message, send_welcome_message, get_f, set_f_to_false
+from helper.openai_api import text_complition
+from helper.twilio_api import send_message
 
 
 from flask import Flask, request, session
@@ -56,20 +56,17 @@ def receiveMessage():
 
     else:
 
-        history = [{"role":"user","content":message}]
+        history = [{"role":"user","content":user_message}]
 
 
     # Getting input from GPT
 
-    result = text_complition(history, user_info)
-
-    # Debuging the result
-
-    logger.debug(f"Result: {result['response']}")
-
+    result = text_complition(history, profile_name)
+    
     # Filling session
 
     session[profile_name] = {'message': user_message, "result": result['response']}
+    logger.debug(f"Session: {session}")
 
     if result['status'] == 1:
             send_message(sender_id, result['response'])
