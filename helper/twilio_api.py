@@ -10,6 +10,7 @@ account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
+f = False
 
 def send_message(to: str, message: str) -> None:
     '''
@@ -28,3 +29,29 @@ def send_message(to: str, message: str) -> None:
         body=message,
         to=to
     )
+    
+def send_welcome_message(to: str, message: str) -> None:
+    '''
+    Send message to a Telegram user.
+
+    Parameters:
+        - to(str): sender whatsapp number in this whatsapp:+919558515995 form
+        - message(str): text message to send
+
+    Returns:
+        - None
+    '''
+
+    _ = client.messages.create(
+        from_=os.getenv('FROM'),
+        body=message,
+        to=to
+    ) 
+    global f  
+    f=True
+def get_f():
+    global f
+    return f
+def set_f_to_false():
+    global f
+    f=False
