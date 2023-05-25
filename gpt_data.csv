@@ -1,3 +1,4 @@
-WaId,Name,Height,Weight,Activity
-5214422522438,José Luis Zamudio Rivera,168 cm,68 kg,Active
-37498901873,Karen,175 cm,65 kg,active
+WaId,Name,Height,Weight,Activity,Birthdate,Watch,Fitness,Environment,Goal,Gender,Scan
+5215579188699,Fernando Camacho,176cm,70,Moderately,January 1st 1991,Yes,Intermediate,Hybrid,Gain muscle,Male,Yes
+5214422522438,José Luis Zamudio Rivera,168,65,Algo activo,03/12/1996,Híbrido,Principiante,Ganar musculo,Ganar musculo,Hombre,Si
+37498901873,Karen,175,65,Active,"July 21, 2002",No,Intermediate,Hybrid,Gain Muscle,Male,No

@@ -10,7 +10,7 @@ account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
-f = False
+
 
 def send_message(to: str, message: str) -> None:
     '''
@@ -47,11 +47,3 @@ def send_welcome_message(to: str, message: str) -> None:
         body=message,
         to=to
     ) 
-    global f  
-    f=True
-def get_f():
-    global f
-    return f
-def set_f_to_false():
-    global f
-    f=False
